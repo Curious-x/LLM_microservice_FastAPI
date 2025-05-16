@@ -11,3 +11,4 @@ class PolicyTranslationRequest(BaseModel):
 class PolicyTranslationResponse(BaseModel):
     policy: str
     response: str = "Policy translated successfully"
+    metadata: Optional[Dict[str, Any]] = None

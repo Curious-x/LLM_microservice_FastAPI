@@ -4,7 +4,7 @@
 from time import sleep
 from fastapi import FastAPI
 
-from app.routers import v0_dummy, v1_basic
+from app.routers import v0_dummy, v2_RLenhanced_validate
 
 app = FastAPI()
 
@@ -21,10 +21,17 @@ app.include_router(
     prefix="/api/v0",
     tags=["V0"],
 )
+
+# app.include_router(
+#     v1_basic.router,
+#     prefix="/api/v1",
+#     tags=["V1"],
+# )
+
 app.include_router(
-    v1_basic.router,
-    prefix="/api/v1",
-    tags=["V1"],
+    v2_RLenhanced_validate.router,
+    prefix="/api/v2",
+    tags=["V2"],
 )
 
 
